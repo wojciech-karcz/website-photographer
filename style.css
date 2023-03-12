@@ -12,6 +12,12 @@ body {
     background-color: #1a1a1a;
 }
 
+@media only screen and (max-width: 1024px) {
+    body{
+        text-align: center;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -22,7 +28,7 @@ h6 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 300;
 }
 
@@ -34,6 +40,12 @@ h4 {
 section {
     height: 100vh;
     padding: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+    section {
+        padding: 5vh;
+    }
 }
 
 .sliderPrev,
@@ -174,6 +186,179 @@ nav {
     }
 }
 
+/* contact&collabs section */
+#contactAndCollabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contact,
+.collabs {
+    padding: 40px;
+    height: 100%;
+    box-shadow: 0px 0px 15px  0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+}
+
+.contact h3,
+.collabs h3 {
+    font-weight: 300;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    text-align: center;
+    width: 30%;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+
+    transform: translateX(10%);
+}
+
+.contact p {
+    padding: 10px 0;
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+#ig:hover {
+    color: #e1306c;
+}
+
+#fb:hover {
+    color: #0165e1;
+}
+
+#li:hover {
+    color: #0077b5
+}
+
+#tw:hover {
+    color: #1da1F2;
+}
+
+#book:hover {
+    color: #a7a7a7;
+}
+
+.collabs {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 80%;
+    align-self: center;
+    background-color: white;
+    z-index: 999;
+    flex-grow: 0;
+}
+
+.testimonialsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.testimonial {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.testimonialPhoto {
+    min-width: 200px;
+    min-height: 200px;
+
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+
+    
+    background-position: center;
+    background-size: cover;
+}
+
+#tPhoto1 {
+    background-image: url("img/testimonials/joe.jpg");
+}
+
+#tPhoto2 {
+    background-image: url("img/testimonials/elizabeth.jpg");
+}
+
+.testimonialText {
+    width: 70%;
+    padding: 20px;
+    font-weight: 100;
+}
+
+.testimonialText h6 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 1330px) {
+    #contactAndCollabs {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 50px;
+    }
+
+    .contact,
+    .collabs {
+        width: 100%;
+        transform: translateX(0);
+        align-items: center;
+    }
+
+    .testimonialsContainer {
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .collabs {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .testimonialsContainer {
+        gap: 20px;
+    }
+
+    .testimonial {
+        flex-direction: column;
+    }
+
+    .testimonialPhoto {
+        margin: 20px 0;
+    }
+
+    .testimonialText {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
 /* gallery section */
 #gallery {
     display: flex;
@@ -263,16 +448,6 @@ nav {
     width: 50%;
 }
 
-ul {
-    list-style-type: none;
-}
-
-ul > li {
-    font-size: 2em;
-}
-
-
-
 /* footer */
 footer {
     background-color: #111;
@@ -282,8 +457,55 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 footer h5 {
     padding: 10px;
+    font-weight: 300;
+}
+
+footer a {
+    color: #a7a7a7;
+    text-decoration: none;
+    transition: .3s;
+}
+
+footer a:hover {
+    color: #07a081;
+}
+
+.disclaimer {
+    position: absolute;
+    bottom: 20px;
+    color: #a7a7a7;
+    font-style: italic;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#construction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#construction h1 {
+    color: white;
+    font-size: 3em;
 }
