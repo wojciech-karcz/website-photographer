@@ -1,6 +1,6 @@
 // header silder
 let currentBackground = 0;
-const header = document.querySelector("#header");
+const header = document.querySelector("#homeHeader");
 
 const headerPrev = document.querySelector("#headerPrev");
 headerPrev.addEventListener("click", () => {

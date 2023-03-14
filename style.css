@@ -9,22 +9,14 @@
 body {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    background-color: #1a1a1a;
+    --background: #1a1a1a;
+    background-color: var(--background);
 }
 
 @media only screen and (max-width: 1024px) {
     body{
         text-align: center;
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
 }
 
 h3 {
@@ -68,22 +60,27 @@ section {
 }
 
 /* header section */
-header {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
     height: 100vh;
     padding: 50px 0;
-    
-    background-image: url("img/background0.jpg");
+
     background-size: cover;
     background-position: center;
-
-    position: relative;
     transition: 0.5s ease-in-out;
     text-shadow: 0px 3px 3px rgba(0,0,0,0.35);
+}
+
+#homeHeader {
+    background-image: url("img/background0.jpg");
+}
+
+#aboutHeader {
+    background-image: url("img/background_john.jpg");
 }
 
 nav {
@@ -218,8 +215,6 @@ nav {
     background-color: #222;
     color: white;
     border-radius: 10px;
-
-    transform: translateX(10%);
 }
 
 .contact p {
@@ -263,6 +258,8 @@ nav {
     background-color: white;
     z-index: 999;
     flex-grow: 0;
+
+    transform: translateX(5%);
 }
 
 .testimonialsContainer {
@@ -482,23 +479,90 @@ footer a:hover {
     font-style: italic;
 }
 
+/* about page */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+}
+
+#about > * {
+    width: 60%;
+    padding: 50px;
+    box-shadow: 0px 0px 15px  0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+}
+
+.about1 {
+    background-color: white;
+}
+
+.about1 h3,
+.about2 h4 {
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.about1 p {
+    margin: 20px 0;
+    font-size: 1em;
+    word-spacing: 3px;
+    line-height: calc(auto + 10px);
+    font-weight: 100;
+}
+
+.about2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("img/john2.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    height: 50vh;
+}
+
+
+.about2 ul {
+    list-style-type: none;
+}
+
+.about2 ul > li {
+    padding: 10px 0;
+    font-weight: 100;
+}
+
+@media only screen and (max-width: 1024px) {
+    #about > * {
+        width: 100%;
+        text-align: left;
+    }
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
   
 ::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: white;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: lightgray;
 }
 
+
+/* for pages under construction */
 #construction {
     display: flex;
     justify-content: center;
