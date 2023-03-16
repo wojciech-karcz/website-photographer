@@ -30,6 +30,7 @@ h4 {
 }
 
 section {
+    display: flex;
     height: 100vh;
     padding: 10vh;
 }
@@ -57,6 +58,16 @@ section {
 
 .sliderNext {
     right: 50px;
+}
+
+.whiteTile {
+    background-color: white;
+    box-shadow: 0px 0px 15px  0px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+    z-index: 999;
+    align-self: center;
+    padding: clamp(20px, 30px, 50px);
 }
 
 /* header section */
@@ -97,10 +108,15 @@ nav {
 }
 
 .menuList a {
-    color: #fff;
+    color: white;
     font-weight: 300;
     font-size: 1.5em;
     text-decoration: none;
+    transition: .3s;
+}
+
+.menuList a:hover {
+    color: lightgray;
 }
 
 .headerText {
@@ -122,7 +138,6 @@ nav {
 
 /* welcome section */
 #welcome {
-    display: flex;
     justify-content: center;
 }
 
@@ -139,13 +154,6 @@ nav {
 .welcomeMessage {
     width: 40%;
     height: 80%;
-    padding: 50px;
-    background-color: white;
-    align-self: center;
-    z-index: 999;
-    box-shadow: 0px 0px 15px  0px rgba(0,0,0,0.7);
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
 
     display: flex;
     flex-direction: column;
@@ -185,7 +193,6 @@ nav {
 
 /* contact&collabs section */
 #contactAndCollabs{
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -255,10 +262,8 @@ nav {
     width: 65%;
     height: 80%;
     align-self: center;
-    background-color: white;
-    z-index: 999;
+    
     flex-grow: 0;
-
     transform: translateX(5%);
 }
 
@@ -358,7 +363,6 @@ nav {
 
 /* gallery section */
 #gallery {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -482,7 +486,6 @@ footer a:hover {
 /* about page */
 
 #about {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -496,10 +499,6 @@ footer a:hover {
     box-shadow: 0px 0px 15px  0px rgba(0,0,0,0.7);
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
-}
-
-.about1 {
-    background-color: white;
 }
 
 .about1 h3,
@@ -525,6 +524,7 @@ footer a:hover {
     background-size: cover;
     color: white;
     height: 50vh;
+    border-radius: 10px;
 }
 
 
@@ -544,6 +544,129 @@ footer a:hover {
     }
 }
 
+/* book page */
+#bookHeader {
+    background-image: url("img/backround_book.jpg");
+    
+}
+
+#bookForm {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.formContainer {
+    width: 60%;
+}
+
+.formWelcome { 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formWelcome h3 {
+    padding: 20px 0;
+}
+
+.form {
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+}
+
+.form h6 {
+    padding: 0 20px;
+    font-size: .8em;
+    font-weight: 400;
+    color: black;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    resize: none;
+    transition: .3s;
+    font-size: .8em;
+}
+
+.form input:active, .form input:focus,
+.form textarea:active, .form textarea:focus {
+    outline: transparent;
+    border-bottom: 1px solid;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form div {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.form textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+    min-height: 100px;
+}
+
+.formSubmit {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    outline: transparent;
+    background-color: white;
+    border: 0;
+    border-bottom: 1px solid lightgrey;
+    font-weight: 400;
+    color: black;
+}
+
+#submit:hover {
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+
+#thankYou,
+#error {
+    text-align: center;
+    opacity: 0; 
+    transition: opacity .3s ease-in-out;
+}
+
+#error {
+    color: red;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    #bookForm > * {
+        width: 100%;
+    }
+}
+
+
 /* scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -559,17 +682,4 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: lightgray;
-}
-
-
-/* for pages under construction */
-#construction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#construction h1 {
-    color: white;
-    font-size: 3em;
 }

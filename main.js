@@ -1,4 +1,4 @@
-// header silder
+// header slider
 let currentBackground = 0;
 const header = document.querySelector("#homeHeader");
 

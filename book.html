@@ -12,13 +12,46 @@
     <title>John Smith Photography</title>
 </head>
 <body>
-    <section id="construction">
-        <h1>page under construction</h1>
+    <header class="header" id="bookHeader">
+        <nav>
+            <ul class="menuList">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Book</a></li>
+            </ul>
+        </nav>
+        <div class="headerText">
+            <h1>JOHN SMITH PHOTOGRAPHY</h1>
+            <h2>BOOK A PHOTO SHOOT</h2>
+        </div>
+    </header>
+    <section id="bookForm">
+        <div class="formContainer whiteTile">
+            <div class="formWelcome">
+                <h3>Let's create something amazing together</h3>
+                <h4>Our advenure begins here, just fill in some info</h4>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Full name" class="" id="name">
+                <input type="email" placeholder="Email" id="email">
+                <input type="number" placeholder="Phone number" id="phoneNumber" size="9" maxlength="9">
+                <input type="text" placeholder="Your location" id="location">
+                <input type="text" placeholder="Do you have a specific date in mind?" id="date">
+                <textarea placeholder="tell me about your vision" spellcheck="yes" id="vision"></textarea>
+            </div>
+            <div class="formSubmit">
+                <button id="submit">Submit</button>
+            </div>
+            <p id="error">Make sure that you fill in every input field</p>
+            <p id="thankYou">Thank you for your submit, I'll reach out to you as soon as I can</p>
+        </div>
     </section>
     <footer>
         <h4>John Smith Photography | &copy; 2023</h4>
         <h5>Website by Wojciech Karcz</h5>
+        <h5 class="disclaimer">// all images come from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></h5>
+        
     </footer>
-    <script src="main.js"></script>
+    <script src="submit.js"></script>
 </body>
 </html>
